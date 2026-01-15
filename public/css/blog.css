@@ -1,0 +1,116 @@
+/* Estilos para la sección de valores y su contenedor de la vista nosotros */
+
+.valores-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 15px;
+}
+/*
+.valores-container h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #333;
+}
+*/
+.valor {
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: block;
+    /* Flexbox para distribuir los elementos */
+    justify-content: space-between;
+    /* Espacio entre texto e ícono */
+    align-items: center;
+    /* Alinea verticalmente */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.valor:hover {
+    background-color: #e9ecef;
+}
+
+.valor i {
+    margin-right: 10px;
+    /* Espacio entre el ícono de la bombilla y el texto */
+}
+
+.icono {
+    font-size: 20px;
+    color: #f30202;
+    transition: transform 0.3s ease;
+    margin-left: 95%;
+    /* Espacio entre el texto y la flecha */
+    margin-top: 0px;
+    cursor: pointer;
+}
+
+.descripcion {
+    display: none;
+    padding: 10px 20px;
+    background-color: #f1f3f5;
+    border-left: 3px solid hsl(357, 100%, 50%);
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.open .descripcion {
+    display: block;
+}
+
+/* Rotación de la flecha */
+.open .icono i {
+    transform: rotate(180deg);
+    /* Rota el ícono cuando se hace clic */
+}
+
+.container h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #D90B1C;
+    /* Color principal */
+    /* Tipografía moderna */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    /* Peso de la fuente para hacerlo más prominente */
+    position: relative;
+    /* Para posicionar el subrayado */
+    text-transform: uppercase;
+    /* Hace que el título esté en mayúsculas */
+}
+
+/* Ajustes específicos para pantallas muy pequeñas (Móviles) */
+@media (max-width: 768px) {
+    .row.align-items-center.mb-5 {
+        text-align: center;
+        /* Centramos el texto en móvil para mejor balance */
+    }
+
+    .col-md-5 img {
+        transform: translateY(30px);
+        /* En móvil, mejor que aparezca desde abajo */
+        margin-bottom: 2rem;
+    }
+
+    .reveal-active .col-md-5 img {
+        transform: translateY(0);
+    }
+
+    /* El efecto typewriter puede ser lento en móvil, lo aceleramos */
+    .fs-6 {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+}
+
+
+.adventure-title {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}

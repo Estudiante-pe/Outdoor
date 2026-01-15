@@ -1,0 +1,238 @@
+
+/* Estilos para la sección de paquetes turísticos */
+.packages {
+    margin-top: 20px;
+}
+/* --- Animación de Cascada para Tarjetas --- */
+.package {
+    opacity: 0;
+    transform: translateY(50px);
+    /* Inicia 50px abajo */
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+        transform 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+        box-shadow 0.3s ease;
+    /* Para el hover */
+    will-change: transform, opacity;
+}
+
+/* Clase que aplicará el JS cuando la tarjeta sea visible */
+.package.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    border: 1px solid rgba(255, 204, 0, 0.3); /* Un toque dorado sutil al aparecer */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Efecto al subir: cuando se sale de la pantalla hacia abajo */
+.package.is-hidden-below {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.package {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s;
+}
+
+.package:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: var(--primary-gold);
+    box-shadow: 0 20px 40px rgba(220, 3, 12, 0.6);
+}
+
+.package img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.6s ease;
+    filter: brightness(0.9);
+}
+
+.package:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+
+
+/* estilos para el contenido de paquetes*/
+.package-title {
+    font-size: 1.25rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 10px;
+    color: #000000;
+}
+
+.price {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #ca001d;
+    margin-top: 10px;
+}
+
+.tipo {
+    font-weight: bold;
+    color: black;
+}
+
+.tipo1 {
+    font-family: cursive;
+    color: #ca001d;
+}
+
+.tipo2 {
+    color: #1e7e34;
+}
+
+.package-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #ca001d 0%, #000000 100%);
+    color: white;
+    font-weight: 600;
+    border: none;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-radius: px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+.package-btn:hover {
+    background: linear-gradient(135deg, #218838 0%, #155724 100%);
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.5);
+    transform: translateY(-2px);
+}
+
+.package-info {
+    display: none;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #666666;
+}
+
+/* --- Animación de entrada para las Cards --- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.package {
+    animation: fadeInUp 0.6s ease backwards;
+}
+/*
+.load-more-btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #ca001d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.load-more-btn:hover {
+    background-color: #ca001d;
+}
+
+*/
+
+/* Estilos generales para mejorar la responsividad */
+@media (max-width: 768px) {
+
+    /* Hacer que el título sea más pequeño en móviles */
+    .hero h1 {
+        font-size: 2rem;
+        /* Tamaño de fuente más pequeño para móviles */
+    }
+
+    /* Ocultar la sección de menú en pantallas pequeñas */
+    .menu-section {
+        display: none;
+    }
+}
+
+/* Mostrar el menú solo en pantallas grandes */
+@media (min-width: 1024px) {
+    .menu-section {
+        display: flex;
+        /* Muestra el menú en pantallas grandes */
+        justify-content: center;
+        /* Centra los elementos */
+        gap: 15px;
+        /* Espaciado entre los items */
+        margin-top: 20px;
+        /* Espacio entre el menú y el contenido */
+    }
+
+    .menu-item a {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+/* Estilo de los botones de la paginación */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.page-btn {
+    margin: 0 5px;
+    padding: 10px 15px;
+    background-color: #ca001d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.page-btn:hover {
+    background-color: #000000;
+}
+
+.page-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.page-btn.active {
+    background-color: #155724;
+}
+
+
+.container h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #D90B1C;
+    /* Color principal */
+    /* Tipografía moderna */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    /* Peso de la fuente para hacerlo más prominente */
+    position: relative;
+    /* Para posicionar el subrayado */
+    text-transform: uppercase;
+    /* Hace que el título esté en mayúsculas */
+}

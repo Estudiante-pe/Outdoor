@@ -1,0 +1,120 @@
+
+/* --- Barra de Navegación de Iconos --- */
+.nav-info-bar {
+    background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(255, 0, 0, 0.1) 50%, rgba(0,0,0,0) 100%);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.nav-link-custom {
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+.nav-link-custom:hover {
+    background: rgba(255, 0, 0, 0.2);
+    transform: translateY(-5px);
+    color: #ca001d !important;
+}
+
+/* --- Tarjetas de Información --- */
+.info-card {
+    background: linear-gradient(145deg, #1a1a1a, #0a0a0a) !important;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-left: 4px solid #dc030c; /* Detalle dorado lateral */
+    font-family: 'Open Sans', sans-serif;
+    transition: var(--transition-smooth);
+}
+
+.info-card:hover {
+    border-left: 4px solid #28a745;
+    transform: scale(1.01);
+}
+
+/* --- Galería Dinámica Animada --- */
+.gallery-container .col-6 {
+    perspective: 1000px;
+}
+
+.gallery-container {
+    background: transparent !important;
+}
+
+
+.gallery-item {
+    position: relative;
+    z-index: 2;
+    opacity: 1 !important;
+    transform: translateY(40px);
+    filter: grayscale(30%);
+    transition: 
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+/* Cuando entra en pantalla */
+.gallery-item.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Cuando sale de pantalla (al seguir bajando) */
+.gallery-item.hide {
+    opacity: 0;
+    transform: translateY(-40px);
+}
+
+.gallery-item:hover {
+    filter: grayscale(0%);
+    transform: scale(1.05) rotateZ(1deg);
+    z-index: 10;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.8);
+}
+
+#lightboxModal .modal-content {
+    background: rgba(0,0,0,0.85) !important;
+    backdrop-filter: blur(5px);
+}
+
+#lightboxImage {
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item {
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* --- Responsive para móvil --- */
+@media (max-width: 768px) {
+    .nav-info-bar .nav {
+        flex-wrap: nowrap;
+        overflow-x: auto; /* Scroll horizontal en iconos para móvil */
+        justify-content: flex-start !important;
+    }
+    .info-card {
+        padding: 1.5rem !important;
+    }
+}
+
+/* Aplicar al contenedor bg-dark de la derecha */
+.booking-container {
+    background: linear-gradient(145deg, #1a1a1a, #0a0a0a) !important;
+    border: 1px solid #333;
+    position: sticky;
+    top: 100px; /* Se queda fijo al hacer scroll */
+}
+
+.price-tag {
+    background: #28a745;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(40, 167, 69, 0.4);
+}

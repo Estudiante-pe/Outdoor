@@ -1,0 +1,293 @@
+
+/*ESTILOS PARA EL FORMULARIO*/
+/* --- Paleta de Colores y Tipografía --- */
+:root {
+    --creme-bg: #fdfbf7;
+    --exp-red: #ca001d;
+    --exp-black: #1a1a1a;
+    --exp-green: #28a745;
+    --glass-white: rgba(255, 255, 255, 0.9);
+}
+
+.form-body-wrapper {
+    background-color: var(--creme-bg);
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    color: var(--exp-black);    /*
+    overflow-x: hidden;  Evita el scroll lateral */
+    width: 100%;
+}
+
+.adventure-h2 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: var(--exp-red);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+/* --- Layout Grid --- */
+.reservation-grid {
+    display: flex;
+    flex-direction: column; /* Apilado por defecto */
+    width: 100% !important;
+    padding: 10px !important;
+    gap: 15px;
+    box-sizing: border-box;
+}
+
+/* --- Tarjetas Estilo "Card Premium" --- */
+.adventure-card {
+    background: var(--glass-white);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    border: 1px solid rgba(202, 0, 29, 0.1);
+}
+
+.summary-card {
+    background: var(--exp-black);
+    color: white;
+    border-radius: 20px;
+    padding: 25px;
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+
+/* --- Estilización de Inputs --- */
+.custom-input-group {
+    margin-bottom: 1.5rem;
+}
+
+.custom-input-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+    color: var(--exp-red);
+    text-transform: uppercase;
+}
+
+.form-control-exp {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.form-control-exp:focus {
+    border-color: var(--exp-red);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(202, 0, 29, 0.1);
+}
+
+/* --- Botones --- */
+.btn-exp-primary {
+    background: var(--exp-red);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 12px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.btn-exp-primary:hover {
+    background: #a80018;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(202, 0, 29, 0.3);
+}
+
+.btn-add-companion {
+    background: var(--exp-black);
+    color: white;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 20px;
+}
+
+/* --- Tabla de Acompañantes --- */
+#tablaClientes {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+}
+
+#tablaClientes thead th {
+    background: var(--exp-red);
+    color: white;
+    padding: 12px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+#tablaClientes tbody tr {
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+#tablaClientes td {
+    padding: 12px;
+    color: var(--exp-black);
+    border-bottom: 1px solid #eee;
+}
+
+
+
+/* Forzamos que en móvil las filas de inputs se rompan y ocupen el 100% */
+@media (max-width: 768px) {
+
+    /* 1. Títulos más pequeños (Datos del titular, Acompañantes) */
+    .adventure-card h5 {
+        font-size: 0.95rem !important;
+        letter-spacing: 0;
+    }
+    
+    /* 2. Alineación de Acompañantes y Botón + en la misma línea */
+    /* Buscamos el div que envuelve el h5 de Acompañantes y el botón */
+    .d-flex.justify-content-between.align-items-center.mb-3 {
+        display: flex !important;
+        flex-direction: row !important; /* Forzamos fila en celular */
+        justify-content: space-between !important;
+        align-items: center !important;
+        flex-wrap: nowrap !important;
+    }
+    .custom-input-group .row {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+    
+    .custom-input-group .row > div {
+        width: 100% !important;
+        padding: 0 !important;
+        margin-bottom: 10px;
+    }
+
+    .form-control-exp {
+        font-size: 16px; /* Evita el zoom automático en iOS */
+    }
+
+/* Transformar el botón "AGREGAR" en solo un "+" circular */
+    .btn-add-companion {
+        width: 35px !important;
+        height: 35px !important;
+        padding: 0 !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 1.2rem !important;
+        min-width: 35px !important;
+    }
+
+    /* Ocultar el texto "AGREGAR" y solo dejar el icono */
+    .btn-add-companion span, 
+    .btn-add-companion i + span {
+        display: none !important;
+    }
+
+    .adventure-h2 {
+        font-size: 1.1rem !important;
+        line-height: 1.4;
+    }
+
+    /* Tabla de acompañantes */
+    .table-responsive {
+        border: none;
+        margin: 0;
+    }
+    
+    #tablaClientes thead {
+        display: none; /* Escondemos cabecera en móvil para ganar espacio */
+    }
+
+    #tablaClientes td {
+        display: block;
+        text-align: left;
+        border: none;
+        padding: 5px 0;
+    }
+
+    /* 3. Tamaño de letra para Resumen (Total Reserva y Reservar con) */
+    .summary-card span, 
+    .summary-card .fs-5, 
+    .summary-card .fs-4 {
+        font-size: 0.9rem !important; /* Reducimos tamaño general */
+    }
+
+    /* Forzar que el precio y el texto estén en la misma línea */
+    .summary-card .d-flex.justify-content-between {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 5px;
+    }
+
+    /* Ajuste específico para el bloque de Reservar con (Adelanto) */
+    .summary-card .fs-2 {
+        font-size: 1.1rem !important; /* Precio del adelanto más pequeño */
+    }
+
+    .summary-card p.small {
+        font-size: 0.7rem !important;
+    }
+}
+
+/* --- ESCRITORIO (A partir de 992px) --- */
+@media (min-width: 992px) {
+    .reservation-grid {
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 40px !important;
+    }
+    
+    .adventure-card { flex: 1.6; }
+    .summary-card { flex: 1; position: sticky; top: 20px; }
+}
+
+
+
+/* --- Ajustes para el Modal de Acompañantes --- */
+.bg-creme {
+    background-color: #fdfbf7 !important;
+}
+
+#modalClientes .modal-content {
+    border-radius: 20px;
+}
+
+#modalClientes .custom-input-group label {
+    font-size: 0.75rem;
+    margin-bottom: 3px;
+    letter-spacing: 0.5px;
+}
+
+#modalClientes .form-control-exp {
+    padding: 8px 12px; /* Un poco más compacto para el modal */
+    font-size: 0.9rem;
+}
+
+/* Responsivo para el modal en celulares */
+@media (max-width: 576px) {
+    #modalClientes .modal-dialog {
+        margin: 10px;
+    }
+    
+    #modalClientes .row.g-2 {
+        flex-direction: column; /* Apila nombres/apellidos en móviles muy pequeños */
+    }
+    
+    #modalClientes .col-6 {
+        width: 100%;
+    }
+    
+    #modalClientes .modal-body {
+        padding: 20px !important;
+    }
+}
