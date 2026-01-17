@@ -4,10 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Activitylog\Traits\LogsActivity;
+use Spatie\Activitylog\LogOptions;
 
 class Reserva extends Model
 {
     use HasFactory;
+    use LogsActivity;
 
     protected $table = 'reservas';
     protected $primaryKey = 'id_reserva';
@@ -44,5 +47,14 @@ class Reserva extends Model
     public function pagos()
     {
         return $this->hasMany(Pago::class, 'id_reserva', 'id_reserva');
+    }
+
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults()
+            ->logAll() // En reservas es mejor trackear todo
+            ->logOnlyDirty()
+            ->dontSubmitEmptyLogs()
+            ->useLogName('Reservas');
     }
 }

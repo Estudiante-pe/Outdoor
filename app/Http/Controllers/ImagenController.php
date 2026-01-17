@@ -14,9 +14,8 @@ class ImagenController extends Controller
         $this->middleware('can:imagenes.ver')->only(['index', 'show']);
         $this->middleware('can:imagenes.crear')->only(['create', 'store']);
         $this->middleware('can:imagenes.editar')->only(['edit', 'update']);
-        $this->middleware('can:imagenes.eliminar')->only(['destroy']);
+        $this->middleware('can:imagenes.eliminar')->only(['destroy']); 
     }
-
     public function index()
     {
         $imagenes = Imagen::with('ruta')->get();

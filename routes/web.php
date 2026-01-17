@@ -22,6 +22,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\ActivityLogController;
 
 // ** Rutas públicas (accesibles sin autenticación) **
 
@@ -97,6 +98,8 @@ Route::middleware([
     Route::get('/movilidad-reporte/rutas', [MovilidadReporteController::class, 'rutasPorFecha']);
     Route::get('/movilidad-reporte/movilidades', [MovilidadReporteController::class, 'movilidadesPorRuta']);
     Route::get('/movilidad-reporte/manifiesto', [MovilidadReporteController::class, 'manifiestoPorMovilidad']);
+
+    Route::get('/logs', [ActivityLogController::class, 'index'])->name('logs.index');
 
 
 });

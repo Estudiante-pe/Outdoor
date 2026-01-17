@@ -1,6 +1,5 @@
 /.phpunit.cache
 /node_modules
-/public/build
 /public/hot
 /public/storage
 /storage/*.key
@@ -21,3 +20,12 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
+# Laravel cache & compiled files
+/bootstrap/cache/*.php
+
+# Storage (except public storage link)
+/storage/*
+!/storage/app/public
+!/storage/framework
+!/storage/logs
+

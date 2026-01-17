@@ -97,7 +97,9 @@ class RoleSeeder extends Seeder
 
             //Permisos para Reportes
             'reporte.ver'=>'ver reportes',
-            'reporte.descargas'=>'iconos de descargar',
+            'reporte.descargas'=>'Esportar',
+            'auditoria.ver'=>'vista de auditoria',
+
         ];
 
         // Crear permisos

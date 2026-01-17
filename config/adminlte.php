@@ -506,8 +506,14 @@ return [
             'submenu' => [
                 [
                     'text' => 'Movilidad',
-                    'icon' => 'fas fa-fw fa-bus', // Ícono de archivo o reporte
+                    'icon' => 'fas fa-fw fa-bus',
                     'url' => 'movilidad',
+                ],
+                [
+                    'text' => 'Auditoria',
+                    'can'=>'auditoria.ver',
+                    'icon' => 'fas fa-shield-alt',
+                    'url' => 'logs',
                 ],
             ],
         ],

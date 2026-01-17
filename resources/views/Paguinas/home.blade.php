@@ -27,7 +27,7 @@
             <!-- Fila con imagen y texto -->
             <div class="row align-items-center mb-5">
                 <div class="col-md-5">
-                    <img src="https://toursentrujillo.com/wp-content/uploads/2022/01/puenting.jpg" alt="Cascas Historia"
+                    <img src="{{ asset('imagenes/nosotros.png')}}"  alt="Outdoor Historia"
                         class="img-fluid rounded">
                 </div>
                 <div class="col-md-7">

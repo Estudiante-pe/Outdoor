@@ -30,7 +30,7 @@
         <div class="container">
             <div class="row align-items-center mb-5">
                 <div class="col-md-6">
-                    <img src="https://content.emarket.pe/common/collections/standard/bb/48/bb481695-657c-486c-bb3d-856651b33959.jpg"
+                    <img src="{{ asset('imagenes/historia.png')}}" 
                         class="img-fluid rounded shadow" alt="Turismo Trujillo" title="Historia">
                 </div>
                 <div class="col-md-6">
