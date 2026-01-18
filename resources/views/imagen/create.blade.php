@@ -6,7 +6,7 @@
                 <h5 class="modal-title" id="staticBackdropLabel">Agregar Imagen</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
             </div>
-            <form action="{{ route('imageness.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('imagen.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="modal-body"> <!-- Agregado -->

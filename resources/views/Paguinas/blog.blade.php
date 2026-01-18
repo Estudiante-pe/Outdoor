@@ -46,9 +46,9 @@
                     </p>
                 </div>
             </div>
-            @include('Paguinas.nosotros.filosofia')
-            @include('Paguinas.nosotros.valores')
-            @include('Paguinas.nosotros.testimonios')
+            @include('paguinas.nosotros.filosofia')
+            @include('paguinas.nosotros.valores')
+            @include('paguinas.nosotros.testimonios')
         </div>
     </section>
 @endsection

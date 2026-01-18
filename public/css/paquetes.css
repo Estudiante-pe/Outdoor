@@ -137,23 +137,6 @@
 .package {
     animation: fadeInUp 0.6s ease backwards;
 }
-/*
-.load-more-btn {
-    margin-top: 20px;
-    padding: 12px 25px;
-    background-color: #ca001d;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.load-more-btn:hover {
-    background-color: #ca001d;
-}
-
-*/
 
 /* Estilos generales para mejorar la responsividad */
 @media (max-width: 768px) {
@@ -226,13 +209,17 @@
     margin-bottom: 1.5rem;
     text-align: center;
     color: #D90B1C;
-    /* Color principal */
-    /* Tipografía moderna */
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 600;
-    /* Peso de la fuente para hacerlo más prominente */
     position: relative;
-    /* Para posicionar el subrayado */
     text-transform: uppercase;
-    /* Hace que el título esté en mayúsculas */
+}
+
+/* Ajuste específico para h2 en celulares */
+@media (max-width: 768px) {
+    .container h2 {
+        font-size: 1.4rem; /* Un poco más pequeño para que no rompa en 2 líneas */
+        padding: 0 10px;
+        line-height: 1.3;
+    }
 }

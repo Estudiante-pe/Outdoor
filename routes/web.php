@@ -80,7 +80,7 @@ Route::middleware([
     Route::resource('fechas', FechaDisponibleController::class);
     Route::resource('lugares', LugarVisitarController::class);
     Route::resource('servicios', ServicioIncluidoController::class);
-    Route::resource('imageness', ImagenController::class);
+    Route::resource('imagen', ImagenController::class);
     Route::resource('movilidades', MovilidadController::class);
     Route::resource('reservasmovilidad', ReservaMovilidadController::class);
 

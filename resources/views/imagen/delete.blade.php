@@ -11,7 +11,7 @@
                 ¿Estás seguro de que deseas eliminar esta imagen? Esta acción no se puede deshacer.
             </div>
             <div class="modal-footer">
-                <form action="{{ route('imageness.destroy', $imagen->id_imagen) }}" method="POST">
+                <form action="{{ route('imagen.destroy', $imagen->id_imagen) }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">Sí, eliminar</button>

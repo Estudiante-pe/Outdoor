@@ -53,16 +53,16 @@
                                 </td>
                             </tr>
 
-                            @include('imagenes.edit')
-                            @include('imagenes.show')
-                            @include('imagenes.delete')
+                            @include('imagen.edit')
+                            @include('imagen.show')
+                            @include('imagen.delete')
                         @endforeach
                     </tbody>
                 </table>
             </div>
         </div>
 
-        @include('imagenes.create')
+        @include('imagen.create')
     </div>
 @stop
 

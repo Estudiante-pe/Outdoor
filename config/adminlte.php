@@ -428,7 +428,7 @@ return [
                 [
                     'text' => 'Imagen',
                     'icon' => 'fas fa-image',
-                    'url' => 'imageness',
+                    'url' => 'imagen',
                     'can' => 'imagenes.ver',
 
                 ]

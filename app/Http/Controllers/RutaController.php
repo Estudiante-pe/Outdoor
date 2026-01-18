@@ -20,7 +20,7 @@ class RutaController extends Controller
     {
         //
         $rutas = Ruta::all();
-        return view('Rutas.index', compact('rutas'));
+        return view('rutas.index', compact('rutas'));
     }
 
     public function store(Request $request)

@@ -18,11 +18,15 @@ class ImagenController extends Controller
     }
     public function index()
     {
-        $imagenes = Imagen::with('ruta')->get();
-        $rutas = Ruta::all();
-        return view('imagenes.index', compact('imagenes', 'rutas')); // 👈 Esto es solo para testear
-    }
+    $imagenes = Imagen::with('ruta')
+        ->whereNotNull('url_imagen')
+        ->get();
 
+    $rutas = Ruta::all();
+
+    return view('imagen.index', compact('imagenes', 'rutas'));
+
+    }
     public function create()
     {
         //
@@ -52,20 +56,20 @@ class ImagenController extends Controller
             'url_imagen' => $url_imagen
         ]);
 
-        return redirect()->route('imageness.index')->with('success', 'Imagen añadida exitosamente');
+        return redirect()->route('imagen.index')->with('success', 'Imagen añadida exitosamente');
     }
 
     public function show($id)
     {
         $imagen = Imagen::findOrFail($id);
-        return view('imagenes.show', compact('imagen'));
+        return view('imagen.show', compact('imagen'));
     }
 
     public function edit($id)
     {
         $imagen = Imagen::findOrFail($id);
         $rutas = Ruta::all();
-        return view('imageness.edit', compact('imagen', 'rutas'));
+        return view('imagen.edit', compact('imagen', 'rutas'));
     }
 
     public function update(Request $request, $id)
@@ -91,7 +95,7 @@ class ImagenController extends Controller
         $imagen->id_ruta = $request->id_ruta;
         $imagen->save();
 
-        return redirect()->route('imageness.index')->with('success', 'Imagen actualizada exitosamente');
+        return redirect()->route('imagen.index')->with('success', 'Imagen actualizada exitosamente');
     }
 
     public function destroy($id)
@@ -99,6 +103,6 @@ class ImagenController extends Controller
         $imagen = Imagen::findOrFail($id);
         $imagen->delete();
 
-        return redirect()->route('imageness.index')->with('success', 'Imagen eliminada exitosamente');
+        return redirect()->route('imagen.index')->with('success', 'Imagen eliminada exitosamente');
     }
 }

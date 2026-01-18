@@ -27,8 +27,7 @@
             <!-- Fila con imagen y texto -->
             <div class="row align-items-center mb-5">
                 <div class="col-md-5">
-                    <img src="{{ asset('imagenes/nosotros.png')}}"  alt="Outdoor Historia"
-                        class="img-fluid rounded">
+                    <img src="{{ asset('imagenes/nosotros.png') }}" alt="Outdoor Historia" class="img-fluid rounded">
                 </div>
                 <div class="col-md-7">
                     <h2>¿Quiénes Somos?</h2>
@@ -70,8 +69,12 @@
                             ->pluck('imagenes')
                             ->flatten()
                             ->pluck('url_imagen')
+                            ->filter()
+                            ->map(fn($img) => asset($img))
                             ->take(10)
+                            ->values()
                             ->toArray();
+
                     @endphp
 
                     <div class="col-md-6 mb-4">
@@ -123,22 +126,19 @@
                 slots.forEach((slot, i) => {
                     const imgElement = slot.querySelector('img');
 
-                    // 1. Aplicar clase de transición
-                    imgElement.classList.add('img-changing');
+                    if (!randomImgs[i]) return; // 🛑 evita undefined
+
                     imgElement.style.opacity = '0';
 
                     setTimeout(() => {
-                        // 2. Cambiar la fuente mientras está invisible
                         imgElement.src = randomImgs[i];
-
-                        // 3. Volver a mostrar con suavidad
                         imgElement.onload = () => {
                             imgElement.style.opacity = '1';
-                            imgElement.classList.remove('img-changing');
                         };
-                    }, 800); // Tiempo que dura el desvanecimiento
+                    }, 800);
                 });
             }
+
             updateImages();
             setInterval(updateImages, updateInterval);
         });

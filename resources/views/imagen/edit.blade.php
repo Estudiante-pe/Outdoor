@@ -9,7 +9,7 @@
         </div>
         <div class="modal-body">
              <!-- Formulario con padding interno -->
-             <form action="{{ route('imageness.update', $imagen->id_imagen) }}" method="POST"
+             <form action="{{ route('imagen.update', $imagen->id_imagen) }}" method="POST"
                 enctype="multipart/form-data" class="p-3">
                 @csrf
                 @method('PUT')
@@ -31,7 +31,7 @@
                 <div class="mb-3">
                     <label for="url_imagen" class="form-label">URL externa (opcional)</label>
                     <input type="text" class="form-control" name="url_imagen" placeholder="https://..."
-                        value="">
+                        value="{{ $imagen->url_imagen }}">
                 </div>
 
                 <!-- Opción 2: Subir nueva imagen -->

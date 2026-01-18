@@ -8,6 +8,12 @@ use Illuminate\Http\Request;
 
 class ActivityLogController extends Controller
 {
+
+public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('can:auditoria.ver')->only(['index', 'show']);
+    }
     // Vista General (La que ya tenías)
     public function index(Request $request)
     {
