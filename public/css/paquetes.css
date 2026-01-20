@@ -215,11 +215,17 @@
     text-transform: uppercase;
 }
 
-/* Ajuste específico para h2 en celulares */
-@media (max-width: 768px) {
-    .container h2 {
-        font-size: 1.4rem; /* Un poco más pequeño para que no rompa en 2 líneas */
-        padding: 0 10px;
-        line-height: 1.3;
+/* Usamos el body para dar más peso al selector */
+@media screen and (max-width: 768px) {
+    body .container h2, 
+    body .packages h2 {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+        font-size: 1.3rem !important; /* Bajamos un poco más por si acaso */
+        font-weight: 700 !important;
+        line-height: 1.2 !important;
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important;
+        padding: 0 15px !important;
     }
 }

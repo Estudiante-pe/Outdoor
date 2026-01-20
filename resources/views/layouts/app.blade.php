@@ -13,7 +13,7 @@
     <!-- Carga de FontAwesome para iconos -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <!-- Enlace al archivo de estilos personalizado -->
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styles.css?v=' . time()) }}">
     <!-- Enlace a Google Fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;800&display=swap"
@@ -21,10 +21,6 @@
 
         <link rel="stylesheet" href="{{ asset('css/whatsapp.css') }}">
         <link rel="stylesheet" href="{{ asset('css/paquetes.css') }}">
-
-
-        
-
 
     <!-- Estilos personalizados -->
     @yield('head') <!-- Permitirá agregar contenido extra en las vistas que lo extienden -->

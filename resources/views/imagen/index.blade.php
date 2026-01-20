@@ -32,7 +32,7 @@
                                 <td>{{ $imagen->id_imagen }}</td>
                                 <td>{{ $imagen->ruta->nombre_ruta }}</td>
                                 <td>
-                                    <img src="{{ asset($imagen->url_imagen) }}" alt="Imagen de Ruta" width="100" class="img-thumbnail">
+                                    <img src="{{ $imagen->url_imagen }}" alt="Imagen de Ruta" width="100" class="img-thumbnail">
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#show{{ $imagen->id_imagen }}">

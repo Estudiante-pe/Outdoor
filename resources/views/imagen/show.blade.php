@@ -13,7 +13,13 @@
                         </div>
                         <div class="mb-3">
                             <strong>Imagen:</strong><br>
-                            <img src="{{ asset($imagen->url_imagen) }}" alt="Imagen de Ruta" class="img-fluid">
+                            @if (Str::startsWith($imagen->url_imagen, 'http'))
+                                {{-- Si es de Cloudinary o URL externa --}}
+                                <img src="{{ $imagen->url_imagen }}" alt="Imagen de Ruta" class="img-fluid">
+                            @else
+                                {{-- Si es una imagen vieja guardada en tu servidor --}}
+                                <img src="{{ asset($imagen->url_imagen) }}" alt="Imagen de Ruta" class="img-fluid">
+                            @endif
                         </div>
                     </div>
                     <div class="modal-footer">
